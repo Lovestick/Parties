@@ -63,7 +63,7 @@ public class Parties extends JavaPlugin {
             pmanager = new PartyManager();
         pmanager.setChatEnabled(this.getConfiguration().getBoolean("partyChatEnabled", true));
         pmanager.setPvpEnabled(this.getConfiguration().getBoolean("partyPvpEnabled", false));
-        pmanager.setTpEnabled(this.getConfiguration().getBoolean("partyTpEnabled", true));
+        pmanager.setTpEnabled(this.getConfiguration().getBoolean("partyTpEnabled", false));
         Logger.getLogger("Minecraft").log(Level.INFO, "[Parties] Enabled! Version: " + this.getDescription().getVersion() + " by bekvon");
         checkPermissions();
     }
@@ -165,9 +165,10 @@ public class Parties extends JavaPlugin {
                     }
                     else if(args[0].equals("tp"))
                     {
-                        if(args.length!=2)
-                            return false;
-                        pmanager.tpRequest(player.getName(), args[1]);
+                        //if(args.length!=2)
+                        //    return false;
+                        //pmanager.tpRequest(player.getName(), args[1]);
+                    	player.sendMessage("Teleport has been disabled.");
                     }
                     else if(args[0].equals("leader"))
                     {
